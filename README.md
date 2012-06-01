@@ -13,5 +13,5 @@ Allows you set up permanent customizations to be applied on-the-fly as well as d
 Agnostic
 ========
 
-Can be used with any unit-test tools and framework as well as data generation libraries.
+Can be used with any unit-test tool and framework as well as data generation library.
 
