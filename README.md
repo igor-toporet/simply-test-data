@@ -8,3 +8,10 @@ Powerful
 ========
 
 Allows you set up permanent customizations to be applied on-the-fly as well as define and apply in-place customizations for objects being created.
+
+
+Agnostic
+========
+
+Can be used with any unit-test tools and framework as well as data generation libraries.
+
