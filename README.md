@@ -1,24 +1,24 @@
-Easy
-====
+# Simple
  
-It is single file with less than hundred lines. So you can just copy it locally and include into your test project.
-Done. Enjoy!
+It is a single file with about one hundred lines. So you can just copy it locally and include into your test project.
 
 
-Flexible
-========
+# Flexible
 
-Allows you set up permanent customizations to be applied on-the-fly as well as define and apply in-place customizations for objects being created.
+Set up permanent customizations per type to be always applied on-the-fly to objects being created. Also you can define and apply additional in-place customizations specific to particular test case.
 
 
-Agnostic
-========
+# Agnostic
 
 Can be used with any unit-test tool and framework as well as data generation libraries.
 
+---
 
-How-To
-======
+## "OK. Show me the code."
 
-For usage scenario ideas see SampleDomain.Tests (not added yet though)
+`<coming soon>`
 
+
+## How-To
+
+For more usage scenario ideas refer to [`SampleDomain.Tests`](https://github.com/igor-toporet/TestData/tree/master/SampleDomain.Tests) (`<coming soon>`)
