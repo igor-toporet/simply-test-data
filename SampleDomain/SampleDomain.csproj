@@ -36,6 +36,24 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AttendedCourse.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="IAggregateRoot{TKey}.cs" />
+    <Compile Include="IIdentifiable{T}.cs" />
+    <Compile Include="IVersionable.cs" />
+    <Compile Include="Mark.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Teacher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_ClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
