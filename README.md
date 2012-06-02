@@ -1,7 +1,7 @@
 Simple
 ======
  
-It is single file with less than hundred lines so you can just include it into your test project and immediately start using.
+It is single file with less than hundred lines so you can just copy it locally and include into your test project and immediately start using.
 
 
 Flexible
