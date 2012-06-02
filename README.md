@@ -21,4 +21,4 @@ Works with any existing unit-testing frameworks as well as data generation libra
 
 ## How-To
 
-For more usage scenario ideas refer to [`SampleDomain.Tests`](https://github.com/igor-toporet/TestData/tree/master/SampleDomain.Tests) (`<coming soon>`)
+For more usage scenario ideas refer to [`SampleDomain.Tests`](https://github.com/igor-toporet/simply-test-data/tree/master/SampleDomain.Tests) (`<coming soon>`)
