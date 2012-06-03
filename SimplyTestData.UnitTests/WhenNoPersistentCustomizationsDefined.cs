@@ -22,13 +22,27 @@ namespace SimplyTestData.UnitTests
         }
 
         [Fact]
-        public void CreatingObjectWitAdhocCustomizationProducesProperlyCustomizedObject()
+        public void CreatingObjectWithSingleAdhocCustomizationProducesObjectWithThatCustomizationApplied()
         {
             const int capacity = 50;
             Action<Room> ofCapacity50 = r => r.Capacity = capacity;
 
             var room = TestData.Create(ofCapacity50);
 
+            Assert.Equal(capacity, room.Capacity);
+        }
+
+        [Fact]
+        public void CreatingObjectWithTwoAdhocCustomizationsProducesObjectWithBothCustomizationsApplied()
+        {
+            const string name = "Small Gym";
+            Action<Room> smallGym = r => r.Name = name;
+            const int capacity = 50;
+            Action<Room> ofCapacity50 = r => r.Capacity = capacity;
+
+            var room = TestData.Create(smallGym, ofCapacity50);
+
+            Assert.Equal(name, room.Name);
             Assert.Equal(capacity, room.Capacity);
         }
     }

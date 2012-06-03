@@ -4,7 +4,7 @@ namespace SampleDomain.Model
 {
     public class Student : Person
     {
-        protected Student()
+        public Student()
         {
             AttendedCourses = new List<AttendedCourse>();
         }
