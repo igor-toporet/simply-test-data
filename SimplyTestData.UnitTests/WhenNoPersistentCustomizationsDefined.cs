@@ -8,7 +8,7 @@ namespace SimplyTestData.UnitTests
     {
         public WhenNoPersistentCustomizationsDefined()
         {
-            TestData.ClearPermanentCustomizations();
+            TestData.Reset();
         }
 
         [Fact]
