@@ -1,4 +1,4 @@
-﻿namespace SampleDomain
+﻿namespace SampleDomain.Persistence
 {
     public interface IVersionable
     {

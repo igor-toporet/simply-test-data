@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using SampleDomain.Persistence;
 
-namespace SampleDomain
+namespace SampleDomain.Model
 {
     public class Course : IAggregateRoot<int>
     {
@@ -13,6 +14,8 @@ namespace SampleDomain
         int IIdentifiable<int>.Id { get; set; }
 
         int IVersionable.Version { get; set; }
+
+        public string Discipline { get; set; }
 
         public string Name { get; set; }
 

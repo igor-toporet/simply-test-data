@@ -1,4 +1,4 @@
-namespace SampleDomain
+namespace SampleDomain.Model
 {
     public class AttendedCourse
     {

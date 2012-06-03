@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 
-namespace SampleDomain
+namespace SampleDomain.Model
 {
     public class Teacher : Person
     {
         protected Teacher()
         {
-            Courses = new List<Course>();
+            CourseIDs = new List<int>();
         }
 
-        public List<Course> Courses { get; private set; }
+        public List<int> CourseIDs { get; private set; }
     }
 }

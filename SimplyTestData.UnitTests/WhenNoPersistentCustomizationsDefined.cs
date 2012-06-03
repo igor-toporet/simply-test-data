@@ -1,5 +1,5 @@
 ﻿using System;
-using SampleDomain;
+using SampleDomain.Model;
 using Xunit;
 
 namespace SimplyTestData.UnitTests

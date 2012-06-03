@@ -1,4 +1,6 @@
-namespace SampleDomain
+using SampleDomain.Persistence;
+
+namespace SampleDomain.Model
 {
     public abstract class Person : IAggregateRoot<int>
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SampleDomain
+namespace SampleDomain.Model
 {
     public class Student : Person
     {

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="SampleDomain.Model.AttendedCourse">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Model\AttendedCourse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleDomain.Model.Teacher">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <Members>
+      <Method Name="Teacher" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleDomain.Model.Course" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Property Name="IIdentifiable&lt;int&gt;.Id" Hidden="true" />
+      <Property Name="IVersionable.Version" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAIAAAAAAAAAAAQAAAAAAABAAAAAAIAgAAA=</HashCode>
+      <FileName>Model\Course.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SampleDomain.Model.Person">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Property Name="IIdentifiable&lt;int&gt;.Id" Hidden="true" />
+      <Property Name="IVersionable.Version" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAg=</HashCode>
+      <FileName>Model\Person.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SampleDomain.Model.Room" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <Members>
+      <Property Name="IIdentifiable&lt;int&gt;.Id" Hidden="true" />
+      <Property Name="IVersionable.Version" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQCAAAAAAAAAAAAAIAgAAA=</HashCode>
+      <FileName>Model\Room.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SampleDomain.Model.Student">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <Members>
+      <Method Name="Student" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SampleDomain.Model.Mark">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAgAAgQAAAACAIAAoAEAAAg=</HashCode>
+      <FileName>Model\Mark.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

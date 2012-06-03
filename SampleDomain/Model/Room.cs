@@ -1,4 +1,6 @@
-namespace SampleDomain
+using SampleDomain.Persistence;
+
+namespace SampleDomain.Model
 {
     public class Room : IAggregateRoot<int>
     {

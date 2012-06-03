@@ -37,22 +37,26 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AttendedCourse.cs" />
-    <Compile Include="Course.cs" />
-    <Compile Include="IAggregateRoot{TKey}.cs" />
-    <Compile Include="IIdentifiable{TKey}.cs" />
-    <Compile Include="IVersionable.cs" />
-    <Compile Include="Mark.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="Room.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
+    <Compile Include="Model\AttendedCourse.cs" />
+    <Compile Include="Model\Course.cs" />
+    <Compile Include="Persistence\IAggregateRoot{TKey}.cs" />
+    <Compile Include="Persistence\IIdentifiable{TKey}.cs" />
+    <Compile Include="Persistence\IVersionable.cs" />
+    <Compile Include="Model\Mark.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="_ClassDiagram.cd" />
+    <None Include="Model\_ClassDiagram.cd" />
+    <None Include="Persistence\_ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
