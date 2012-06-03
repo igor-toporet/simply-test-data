@@ -8,8 +8,8 @@
     <ProjectGuid>{FB8EB77C-5C2F-446F-8B41-A31BDFB8080F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestData</RootNamespace>
-    <AssemblyName>TestData</AssemblyName>
+    <RootNamespace>SimplyTestData</RootNamespace>
+    <AssemblyName>SimplyTestData</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TestData
+namespace SimplyTestData
 {
     public static class TestData
     {

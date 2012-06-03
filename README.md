@@ -5,7 +5,7 @@ It is a single file with about one hundred lines. Just copy/paste it locally and
 
 # Flexible
 
-Set up permanent customizations per type to be always applied on-the-fly to objects being created. Define and apply additional in-place customizations specific to particular test case.
+Set up permanent customizations per type to be always applied on-the-fly to objects being created. Define and apply additional ad-hoc customizations specific to particular test case.
 
 
 # Agnostic
