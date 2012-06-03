@@ -8,22 +8,36 @@ namespace SimplyTestData
     {
         private static readonly Dictionary<Type, Delegate> PermanentCustomizations = new Dictionary<Type, Delegate>();
 
-        public static void ApplyPermanently<T>(params Action<T>[] customizations)
+        /// <summary>
+        /// Clears all previously stored permanent customizations for objects of all types.
+        /// </summary>
+        public static void ClearAllPermanentCustomizations()
+        {
+            PermanentCustomizations.Clear();
+        }
+
+        /// <summary>
+        /// Clears all permanent customizations for objects of type <typeparam name="T">T</typeparam>.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <remarks>Permament customizations for derived types remain intact.</remarks>
+        public static void ClearPermanentCustomizations<T>()
+        {
+            PermanentCustomizations.Remove(typeof(T));
+        }
+
+        /// <summary>
+        /// Stores customizations permanently and then applies them
+        /// to every created object of type <typeparam name="T">T</typeparam> or of derived type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="customizations"></param>
+        public static void SetPermanentCustomizations<T>(params Action<T>[] customizations) where T : class
         {
             foreach (var customization in customizations)
             {
                 StoreCustomizationAsPermanent(customization);
             }
-        }
-
-        public static void ClearPermanentCustomizations()
-        {
-            PermanentCustomizations.Clear();
-        }
-
-        public static void ClearPermanentCustomizations<T>()
-        {
-            PermanentCustomizations.Remove(typeof(T));
         }
 
         public static T Create<T>(params Action<T>[] customizations) where T : class
@@ -77,7 +91,7 @@ namespace SimplyTestData
             return customizedType.IsAssignableFrom(type) || type.GetInterfaces().Contains(customizedType);
         }
 
-        private static void StoreCustomizationAsPermanent<T>(Action<T> customization)
+        private static void StoreCustomizationAsPermanent<T>(Action<T> customization) where T : class
         {
             Type actualUnderlyingType = customization.GetType().GetGenericArguments()[0];
 

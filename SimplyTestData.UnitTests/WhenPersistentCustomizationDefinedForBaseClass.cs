@@ -7,8 +7,8 @@ namespace SimplyTestData.UnitTests
     {
         public WhenPersistentCustomizationDefinedForBaseClass()
         {
-            TestData.Reset();
-            TestData.SetPermanent<Person>(Eminem.MyNameIs);
+            TestData.ClearAllPermanentCustomizations();
+            TestData.SetPermanentCustomizations<Person>(Eminem.MyNameIs);
         }
 
         [Fact]
