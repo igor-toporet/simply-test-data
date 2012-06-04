@@ -14,6 +14,24 @@ Works with any existing unit-testing frameworks as well as data generation libra
 
 ---
 
+## Similar projects
+
+Well-known and respected:
+
+- NBuider [https://code.google.com/p/nbuilder](https://code.google.com/p/nbuilder)
+- AutoPoco [http://autopoco.codeplex.com](http://autopoco.codeplex.com)
+
+Little-known:
+
+- Hydrator [http://hydrator.codeplex.com](http://hydrator.codeplex.com)
+- Fabricator [http://fabricator.codeplex.com](http://fabricator.codeplex.com)
+
+Unfamiliar:
+
+- TestDataGenerator [https://github.com/etishor/TestDataGenerator](https://github.com/etishor/TestDataGenerator)
+- TestDataFactory [https://github.com/titarenko/TestDataFactory](https://github.com/titarenko/TestDataFactory)
+
+
 ## "OK. Show me the code."
 
 `<coming soon>`
