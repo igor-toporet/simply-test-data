@@ -14,6 +14,13 @@ Works with any existing unit-testing frameworks as well as data generation libra
 
 ---
 
+## "OK. Show me the code."
+
+`<coming soon>`
+
+For more usage scenario ideas refer to [`SampleDomain.Tests`](https://github.com/igor-toporet/simply-test-data/tree/master/SampleDomain.Tests) (coming soon though)
+
+
 ## Similar projects
 
 Well-known and respected:
@@ -30,13 +37,3 @@ Unfamiliar:
 
 - TestDataGenerator | [https://github.com/etishor/TestDataGenerator](https://github.com/etishor/TestDataGenerator)
 - TestDataFactory | [https://github.com/titarenko/TestDataFactory](https://github.com/titarenko/TestDataFactory)
-
-
-## "OK. Show me the code."
-
-`<coming soon>`
-
-
-## How-To
-
-For more usage scenario ideas refer to [`SampleDomain.Tests`](https://github.com/igor-toporet/simply-test-data/tree/master/SampleDomain.Tests) (coming soon though)
