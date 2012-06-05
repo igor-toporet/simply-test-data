@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyTestData", "SimplyTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyTestData.UnitTests", "SimplyTestData.UnitTests\SimplyTestData.UnitTests.csproj", "{BAFA5125-0C9C-4280-A268-F2EC1306BD38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStarted", "GettingStarted\GettingStarted.csproj", "{2A2C4FB9-3F53-4097-A071-7B5DA5332EFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -36,6 +38,10 @@ Global
 		{BAFA5125-0C9C-4280-A268-F2EC1306BD38}.Debug|x86.Build.0 = Debug|x86
 		{BAFA5125-0C9C-4280-A268-F2EC1306BD38}.Release|x86.ActiveCfg = Release|x86
 		{BAFA5125-0C9C-4280-A268-F2EC1306BD38}.Release|x86.Build.0 = Release|x86
+		{2A2C4FB9-3F53-4097-A071-7B5DA5332EFA}.Debug|x86.ActiveCfg = Debug|x86
+		{2A2C4FB9-3F53-4097-A071-7B5DA5332EFA}.Debug|x86.Build.0 = Debug|x86
+		{2A2C4FB9-3F53-4097-A071-7B5DA5332EFA}.Release|x86.ActiveCfg = Release|x86
+		{2A2C4FB9-3F53-4097-A071-7B5DA5332EFA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
