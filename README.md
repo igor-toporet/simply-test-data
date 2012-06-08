@@ -16,7 +16,7 @@ Works with any existing unit-testing frameworks as well as data generation libra
 
 ## "OK. Show me the code."
 
-For quick introduction you may want to refer to [Getting Started](wiki/Getting-Started) wiki page.
+For quick introduction you may want to refer to [Getting Started](https://github.com/igor-toporet/simply-test-data/wiki/Getting-Started) wiki page.
 
 
 ## Similar projects
