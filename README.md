@@ -24,6 +24,7 @@ For quick introduction you may want to refer to [Getting Started](https://github
 Well-known and respected:
 
 - NBuider | [https://code.google.com/p/nbuilder](https://code.google.com/p/nbuilder)
+- AutoFixture | [http://autofixture.codeplex.com](http://autofixture.codeplex.com)
 - AutoPoco | [http://autopoco.codeplex.com](http://autopoco.codeplex.com)
 
 Little-known:
