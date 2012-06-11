@@ -37,6 +37,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeItEasy">
+      <HintPath>..\packages\FakeItEasy.1.7.4507.61\lib\NET40\FakeItEasy.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="xunit">
       <HintPath>..\packages\xunit.1.9.0.1566\lib\xunit.dll</HintPath>
@@ -47,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicFixture.cs" />
+    <Compile Include="PermanentCustomizationFixture.cs" />
+    <Compile Include="MockingExamples.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimplyTestData\SimplyTestData.csproj">
