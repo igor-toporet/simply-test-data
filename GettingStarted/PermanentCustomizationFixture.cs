@@ -6,25 +6,22 @@ using Xunit;
 
 namespace GettingStarted
 {
-    public interface IVersionable
-    {
-        int Version { get; set; }
-    }
-
     public interface IIdentifiable<TKey> where TKey : struct
     {
         TKey Id { get; set; }
     }
 
+    public interface IVersionable
+    {
+        int Version { get; set; }
+    }
+
     public class Resource : IIdentifiable<int>, IVersionable
     {
         public int Id { get; set; }
-
         public string Name { get; set; }
-
         public int Version { get; set; }
     }
-
 
     public class PermanentCustomizationFixture
     {
