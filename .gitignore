@@ -7,3 +7,7 @@ TestResults
 
 # JetBrains' dotCover
 *.dotCover
+
+# user settings
+*.user
+*suo
