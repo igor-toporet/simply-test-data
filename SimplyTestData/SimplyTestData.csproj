@@ -37,8 +37,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CustomizationsContainer.cs" />
+    <Compile Include="DefaultCustomizationsContainer.cs" />
+    <Compile Include="CustomizationExtensions.cs" />
+    <Compile Include="ICustomizationsContainer.cs" />
     <Compile Include="TestData.cs" />
+    <Compile Include="TestDataSession.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

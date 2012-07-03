@@ -4,36 +4,21 @@ using System.Linq;
 
 namespace SimplyTestData
 {
-    public class CustomizationsContainer
+    public class DefaultCustomizationsContainer : ICustomizationsContainer
     {
         private readonly Dictionary<Type, Delegate> _customizations = new Dictionary<Type, Delegate>();
 
-
-        /// <summary>
-        /// Clears all previously stored permanent customizations for objects of all types.
-        /// </summary>
-        public  void ClearAllPermanentCustomizations()
+        public  void ClearAll()
         {
             _customizations.Clear();
         }
 
-        /// <summary>
-        /// Clears all permanent customizations for objects of type <typeparam name="T">T</typeparam>.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <remarks>Permament customizations for derived types remain intact.</remarks>
-        public  void ClearPermanentCustomizations<T>()
+        public void ClearCustomizationsForType<T>()
         {
             _customizations.Remove(typeof(T));
         }
 
-        /// <summary>
-        /// Stores customizations permanently and then applies them
-        /// to every created object of type <typeparam name="T">T</typeparam> or of derived type.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="customizations"></param>
-        public  void SetPermanentCustomizations<T>(params Action<T>[] customizations) where T : class
+        public void AddCustomizationsForType<T>(params Action<T>[] customizations)
         {
             foreach (var customization in customizations)
             {
@@ -41,7 +26,26 @@ namespace SimplyTestData
             }
         }
 
-        private  void StoreCustomizationAsPermanent<T>(Action<T> customization) where T : class
+        public IEnumerable<Action<T>> GetCustomizationsApplicableForType<T>()
+        {
+            var type = typeof(T);
+
+            var applicableCustomizations =
+                from customizationMapping in _customizations
+                let customizedType = customizationMapping.Key
+                let customization = customizationMapping.Value
+                where CanInterpretTypeAsCustomized(type, customizedType)
+                select customization;
+
+            return applicableCustomizations.Cast<Action<T>>().ToArray();
+        }
+
+        private static bool CanInterpretTypeAsCustomized(Type type, Type customizedType)
+        {
+            return customizedType.IsAssignableFrom(type) || type.GetInterfaces().Contains(customizedType);
+        }
+
+        private void StoreCustomizationAsPermanent<T>(Action<T> customization)
         {
             Type actualUnderlyingType = customization.GetType().GetGenericArguments()[0];
 
