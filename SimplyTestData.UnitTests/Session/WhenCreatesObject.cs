@@ -15,11 +15,11 @@ namespace SimplyTestData.UnitTests.Session
         public void AsksContainerForApplicableCustomizations()
         {
             var fakeCustomizationsContainer = A.Fake<ICustomizationsContainer>();
-            Session.CustomizationsContainer = fakeCustomizationsContainer;
+            Session.Customizations = fakeCustomizationsContainer;
 
             Session.Create<Student>(s => s.FirstName = "test");
 
-            A.CallTo(() => fakeCustomizationsContainer.GetCustomizationsApplicableForType<Student>())
+            A.CallTo(() => fakeCustomizationsContainer.GetApplicableToType<Student>())
                 .MustHaveHappened();
         }
     }

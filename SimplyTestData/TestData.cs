@@ -7,7 +7,7 @@ namespace SimplyTestData
     {
         static TestData()
         {
-            DefaultSession = new TestDataSession {CustomizationsContainer = new StandardCustomizationsContainer()};
+            DefaultSession = new TestDataSession {Customizations = new StandardCustomizationsContainer()};
         }
 
         public static TestDataSession DefaultSession { get; set; }
@@ -17,7 +17,7 @@ namespace SimplyTestData
         /// </summary>
         public static void ClearAllPermanentCustomizations()
         {
-            DefaultSession.CustomizationsContainer.ClearAll();
+            DefaultSession.Customizations.ClearAll();
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace SimplyTestData
         /// <remarks>Permament customizations for derived types remain intact.</remarks>
         public static void ClearPermanentCustomizations<T>()
         {
-            DefaultSession.CustomizationsContainer.ClearCustomizationsForType<T>();
+            DefaultSession.Customizations.ClearForType<T>();
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace SimplyTestData
         /// <param name="customizations"></param>
         public static void SetPermanentCustomizations<T>(params Action<T>[] customizations) where T : class
         {
-            DefaultSession.CustomizationsContainer.AddCustomizationsForType(customizations);
+            DefaultSession.Customizations.AddForType(customizations);
         }
     }
 }

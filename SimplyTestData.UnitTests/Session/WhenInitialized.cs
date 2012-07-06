@@ -12,7 +12,7 @@ namespace SimplyTestData.UnitTests.Session
         [Fact]
         public void CustomizationsContainerIsNull()
         {
-            Assert.Null(Session.CustomizationsContainer);
+            Assert.Null(Session.Customizations);
         }
     }
 }

@@ -13,12 +13,12 @@ namespace SimplyTestData
             _customizations.Clear();
         }
 
-        public void ClearCustomizationsForType<T>()
+        public void ClearForType<T>()
         {
             _customizations.Remove(typeof(T));
         }
 
-        public void AddCustomizationsForType<T>(params Action<T>[] customizations)
+        public void AddForType<T>(params Action<T>[] customizations)
         {
             foreach (var customization in customizations)
             {
@@ -26,7 +26,7 @@ namespace SimplyTestData
             }
         }
 
-        public IEnumerable<Action<T>> GetCustomizationsApplicableForType<T>()
+        public IEnumerable<Action<T>> GetApplicableToType<T>()
         {
             var type = typeof(T);
 
