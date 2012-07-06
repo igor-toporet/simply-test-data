@@ -5,6 +5,9 @@ obj
 # mstest test results
 TestResults
 
+# NCrunch cache
+_NCrunch_*/
+
 # JetBrains' dotCover
 *.dotCover
 
