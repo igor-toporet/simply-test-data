@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SimplyTestData
 {
-    public class DefaultCustomizationsContainer : ICustomizationsContainer
+    public class StandardCustomizationsContainer : ICustomizationsContainer
     {
         private readonly Dictionary<Type, Delegate> _customizations = new Dictionary<Type, Delegate>();
 

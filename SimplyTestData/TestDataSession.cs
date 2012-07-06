@@ -23,9 +23,12 @@ namespace SimplyTestData
         {
             var obj = new T();
 
-            var permanentCustomizations = CustomizationsContainer.GetCustomizationsApplicableForType<T>();
+            if (CustomizationsContainer != null)
+            {
+                var permanentCustomizations = CustomizationsContainer.GetCustomizationsApplicableForType<T>();
+                obj.Customize(permanentCustomizations);
+            }
 
-            obj.Customize(permanentCustomizations);
             obj.Customize(customizations);
 
             return obj;

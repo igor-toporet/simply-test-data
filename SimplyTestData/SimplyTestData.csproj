@@ -37,7 +37,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DefaultCustomizationsContainer.cs" />
+    <Compile Include="StandardCustomizationsContainer.cs" />
     <Compile Include="CustomizationExtensions.cs" />
     <Compile Include="ICustomizationsContainer.cs" />
     <Compile Include="TestData.cs" />

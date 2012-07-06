@@ -5,15 +5,19 @@ namespace SimplyTestData
 {
     public static class TestData
     {
-        private static readonly TestDataSession TestDataSession =
-            new TestDataSession {CustomizationsContainer = new DefaultCustomizationsContainer()};
+        static TestData()
+        {
+            DefaultSession = new TestDataSession {CustomizationsContainer = new StandardCustomizationsContainer()};
+        }
+
+        public static TestDataSession DefaultSession { get; set; }
 
         /// <summary>
         /// Clears all previously stored permanent customizations for objects of all types.
         /// </summary>
         public static void ClearAllPermanentCustomizations()
         {
-            TestDataSession.CustomizationsContainer.ClearAll();
+            DefaultSession.CustomizationsContainer.ClearAll();
         }
 
         /// <summary>
@@ -23,7 +27,7 @@ namespace SimplyTestData
         /// <remarks>Permament customizations for derived types remain intact.</remarks>
         public static void ClearPermanentCustomizations<T>()
         {
-            TestDataSession.CustomizationsContainer.ClearCustomizationsForType<T>();
+            DefaultSession.CustomizationsContainer.ClearCustomizationsForType<T>();
         }
 
         /// <summary>
@@ -40,7 +44,7 @@ namespace SimplyTestData
         /// </returns>
         public static T Create<T>(params Action<T>[] customizations) where T : class, new()
         {
-            return TestDataSession.Create(customizations);
+            return DefaultSession.Create(customizations);
         }
 
         /// <summary>
@@ -57,7 +61,7 @@ namespace SimplyTestData
         /// </returns>
         public static IList<T> CreateListOf<T>(ushort size) where T : class, new()
         {
-            return TestDataSession.CreateListOf<T>(size);
+            return DefaultSession.CreateListOf<T>(size);
         }
 
         /// <summary>
@@ -68,7 +72,7 @@ namespace SimplyTestData
         /// <param name="customizations"></param>
         public static void SetPermanentCustomizations<T>(params Action<T>[] customizations) where T : class
         {
-            TestDataSession.CustomizationsContainer.AddCustomizationsForType(customizations);
+            DefaultSession.CustomizationsContainer.AddCustomizationsForType(customizations);
         }
     }
 }
