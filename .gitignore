@@ -2,15 +2,18 @@
 bin
 obj
 
-# mstest test results
+# user specific
+*.user
+*.suo
+
+# Visual Studio specific
 TestResults
+
+# Set 'Allow NuGet to download missing packages during build' in Package Manager's options
+packages
 
 # NCrunch cache
 _NCrunch_*/
 
-# JetBrains' dotCover
+# JetBrains dotCover specific
 *.dotCover
-
-# user settings
-*.user
-*.suo
