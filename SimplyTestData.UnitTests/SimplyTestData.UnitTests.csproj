@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Container\StandardCustomizationsContainerFixtureBase.cs" />
+    <Compile Include="Container\WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly.cs" />
     <Compile Include="Container\WhenApplicableCustomizationsAreScopedToRequestedTypeOnly.cs" />
     <Compile Include="Session\TestDataSessionFixtureBase.cs" />
     <Compile Include="Session\WhenCreatesObject.cs" />

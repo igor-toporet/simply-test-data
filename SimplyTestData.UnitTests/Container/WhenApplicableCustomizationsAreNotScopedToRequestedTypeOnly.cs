@@ -1,15 +1,14 @@
-using System;
 using System.Linq;
 using FluentAssertions;
 using Xunit;
 
 namespace SimplyTestData.UnitTests.Container
 {
-    public class WhenApplicableCustomizationsAreScopedToRequestedTypeOnly : StandardCustomizationsContainerFixtureBase
+    public class WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly : StandardCustomizationsContainerFixtureBase
     {
-        public WhenApplicableCustomizationsAreScopedToRequestedTypeOnly()
+        public WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly()
         {
-            Container.ScopeApplicableCustomizationsToRequestedTypeOnly = true;
+            Container.ScopeApplicableCustomizationsToRequestedTypeOnly = false;
         }
 
         [Fact]
@@ -17,24 +16,24 @@ namespace SimplyTestData.UnitTests.Container
         {
             var applicableCustomizations = Container.GetApplicableToType<C>().ToArray();
 
-            applicableCustomizations.Should().HaveCount(1);
+            applicableCustomizations.Should().HaveCount(3);
             applicableCustomizations.Should().Contain(TransformConcreteType);
         }
 
         [Fact]
-        public void CustomizationsForBaseClassAreNotApplied()
+        public void CustomizationsForBaseClassAreApplied()
         {
             var applicableCustomizations = Container.GetApplicableToType<C>().ToArray();
 
-            applicableCustomizations.Should().NotContain(TransformBaseType);
+            applicableCustomizations.Should().Contain(TransformBaseType);
         }
 
         [Fact]
-        public void CustomizationsForImplementedInterfacesAreNotApplied()
+        public void CustomizationsForImplementedInterfacesAreApplied()
         {
             var applicableCustomizations = Container.GetApplicableToType<C>().ToArray();
 
-            applicableCustomizations.Should().NotContain(TransformImplementedInterface);
+            applicableCustomizations.Should().Contain(TransformImplementedInterface);
         }
     }
 }
