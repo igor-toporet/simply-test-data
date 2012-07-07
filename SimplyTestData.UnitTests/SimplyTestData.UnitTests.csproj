@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Container\StandardCustomizationsContainerFixtureBase.cs" />
-    <Compile Include="Container\WhenConsideringCustomizationsApplicableToConcreteTypeOnly.cs" />
+    <Compile Include="Container\WhenApplicableCustomizationsAreScopedToRequestedTypeOnly.cs" />
     <Compile Include="Session\TestDataSessionFixtureBase.cs" />
     <Compile Include="Session\WhenCreatesObject.cs" />
     <Compile Include="Session\WhenInitialized.cs" />

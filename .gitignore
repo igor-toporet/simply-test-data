@@ -10,7 +10,7 @@ obj
 TestResults
 
 # Set 'Allow NuGet to download missing packages during build' in Package Manager's options
-packages
+packages/
 
 # NCrunch cache
 _NCrunch_*/

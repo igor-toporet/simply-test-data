@@ -5,7 +5,7 @@ using Xunit;
 
 namespace SimplyTestData.UnitTests.Container
 {
-    public class WhenConsideringCustomizationsApplicableToConcreteTypeOnly : StandardCustomizationsContainerFixtureBase
+    public class WhenApplicableCustomizationsAreScopedToRequestedTypeOnly : StandardCustomizationsContainerFixtureBase
     {
         private class B
         {
@@ -22,9 +22,9 @@ namespace SimplyTestData.UnitTests.Container
             public int N { get; set; }
         }
 
-        public WhenConsideringCustomizationsApplicableToConcreteTypeOnly()
+        public WhenApplicableCustomizationsAreScopedToRequestedTypeOnly()
         {
-            Container.ApplicableToConcreteTypeOnly = true;
+            Container.ScopeApplicableCustomizationsToRequestedTypeOnly = true;
         }
 
         [Fact]

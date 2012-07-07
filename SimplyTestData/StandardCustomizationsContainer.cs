@@ -39,18 +39,18 @@ namespace SimplyTestData
         }
 
         /// <summary>
-        /// Limits customizations to be considered as applicable to the specified concrete type itself.
+        /// Limits customizations to be considered as applicable to the specified type itself.
         /// </summary>
         /// <remarks>
         /// In other words, customizations defined for base/inherited types
         /// as well as for implemented interfaces will be not included
         /// into results of GetApplicableToType&lt;T&gt;() call.
         /// </remarks>
-        public bool ApplicableToConcreteTypeOnly { get; set; }
+        public bool ScopeApplicableCustomizationsToRequestedTypeOnly { get; set; }
 
         private bool CanInterpretTypeAsCustomized(Type type, Type customizedType)
         {
-            if (ApplicableToConcreteTypeOnly)
+            if (ScopeApplicableCustomizationsToRequestedTypeOnly)
             {
                 return type == customizedType;
             }
