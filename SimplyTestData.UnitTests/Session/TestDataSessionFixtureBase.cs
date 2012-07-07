@@ -1,7 +1,7 @@
 namespace SimplyTestData.UnitTests.Session
 {
-    public class TestDataSessionFixtureBase
+    public abstract class TestDataSessionFixtureBase
     {
-        protected SimplyTestData.TestDataSession Session;
+        protected readonly TestDataSession Session = new TestDataSession();
     }
 }

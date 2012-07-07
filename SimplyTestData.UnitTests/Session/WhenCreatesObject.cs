@@ -6,11 +6,6 @@ namespace SimplyTestData.UnitTests.Session
 {
     public class WhenCreatesObject : TestDataSessionFixtureBase
     {
-        public WhenCreatesObject()
-        {
-            Session = new TestDataSession();
-        }
-
         [Fact]
         public void AsksContainerForApplicableCustomizations()
         {

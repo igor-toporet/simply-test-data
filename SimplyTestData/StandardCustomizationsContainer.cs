@@ -6,61 +6,76 @@ namespace SimplyTestData
 {
     public class StandardCustomizationsContainer : ICustomizationsContainer
     {
-        private readonly Dictionary<Type, Delegate> _customizations = new Dictionary<Type, Delegate>();
-
-        public  void ClearAll()
-        {
-            _customizations.Clear();
-        }
-
-        public void ClearForType<T>()
-        {
-            _customizations.Remove(typeof(T));
-        }
+        protected readonly Dictionary<Type, Delegate> Customizations = new Dictionary<Type, Delegate>();
 
         public void AddForType<T>(params Action<T>[] customizations)
         {
             foreach (var customization in customizations)
             {
-                StoreCustomizationAsPermanent(customization);
+                StoreCustomization(customization);
             }
+        }
+
+        public void ClearAll()
+        {
+            Customizations.Clear();
+        }
+
+        public void ClearForType<T>()
+        {
+            Customizations.Remove(typeof(T));
         }
 
         public IEnumerable<Action<T>> GetApplicableToType<T>()
         {
-            var type = typeof(T);
-
             var applicableCustomizations =
-                from customizationMapping in _customizations
+                from customizationMapping in Customizations
                 let customizedType = customizationMapping.Key
                 let customization = customizationMapping.Value
-                where CanInterpretTypeAsCustomized(type, customizedType)
+                where CanInterpretTypeAsCustomized(typeof(T), customizedType)
                 select customization;
 
             return applicableCustomizations.Cast<Action<T>>().ToArray();
         }
 
-        private static bool CanInterpretTypeAsCustomized(Type type, Type customizedType)
+        /// <summary>
+        /// Limits customizations to be considered as applicable to the specified concrete type itself.
+        /// </summary>
+        /// <remarks>
+        /// In other words, customizations defined for base/inherited types
+        /// as well as for implemented interfaces will be not included
+        /// into results of GetApplicableToType&lt;T&gt;() call.
+        /// </remarks>
+        public bool ApplicableToConcreteTypeOnly { get; set; }
+
+        private bool CanInterpretTypeAsCustomized(Type type, Type customizedType)
         {
-            return customizedType.IsAssignableFrom(type) || type.GetInterfaces().Contains(customizedType);
+            if (ApplicableToConcreteTypeOnly)
+            {
+                return type == customizedType;
+            }
+
+            return customizedType.IsAssignableFrom(type);
         }
 
-        private void StoreCustomizationAsPermanent<T>(Action<T> customization)
+        protected void StoreCustomization<T>(Action<T> customization)
         {
-            Type actualUnderlyingType = customization.GetType().GetGenericArguments()[0];
+            Type customizedType = customization.GetType().GetGenericArguments()[0];
 
-            Delegate storedPermanentCustomizations;
-            if (_customizations.TryGetValue(actualUnderlyingType, out storedPermanentCustomizations))
+            Delegate storedCustomizations;
+            if (Customizations.TryGetValue(customizedType, out storedCustomizations))
             {
-                var unique = storedPermanentCustomizations.GetInvocationList()
+                var uniqueInvocations =
+                    storedCustomizations.GetInvocationList()
                     .Union(customization.GetInvocationList());
-                var combined = Delegate.Combine(unique.ToArray());
 
-                _customizations[actualUnderlyingType] = combined;
+                var combinedIntoDelegate = Delegate.Combine(uniqueInvocations.ToArray());
+
+                Customizations[customizedType] = combinedIntoDelegate;
             }
             else
             {
-                _customizations.Add(actualUnderlyingType, customization);
+                Customizations.Add(customizedType, customization);
             }
         }
     }
