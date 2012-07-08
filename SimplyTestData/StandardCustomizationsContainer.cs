@@ -39,6 +39,16 @@ namespace SimplyTestData
         }
 
         /// <summary>
+        /// Allows duplicate customizations to be added for types.
+        /// </summary>
+        /// <remarks>
+        /// Please note that customizations might have side effects so in this case
+        /// duplicate customizations might lead to ... [TBD].
+        /// However it can be desired behavior.
+        /// </remarks>
+        public bool AllowDuplicates { get; set; }
+
+        /// <summary>
         /// Limits customizations to be considered as applicable to the specified type itself.
         /// </summary>
         /// <remarks>
@@ -65,11 +75,8 @@ namespace SimplyTestData
             Delegate storedCustomizations;
             if (Customizations.TryGetValue(customizedType, out storedCustomizations))
             {
-                var uniqueInvocations =
-                    storedCustomizations.GetInvocationList()
-                    .Union(customization.GetInvocationList());
-
-                var combinedIntoDelegate = Delegate.Combine(uniqueInvocations.ToArray());
+                var resultingInvocations = GetResultingInvocations(storedCustomizations, customization);
+                Delegate combinedIntoDelegate = Delegate.Combine(resultingInvocations);
 
                 Customizations[customizedType] = combinedIntoDelegate;
             }
@@ -77,6 +84,18 @@ namespace SimplyTestData
             {
                 Customizations.Add(customizedType, customization);
             }
+        }
+
+        private Delegate[] GetResultingInvocations<T>(Delegate storedCustomizations, Action<T> customization)
+        {
+            var storedInvocations = storedCustomizations.GetInvocationList();
+            var newInvocations = customization.GetInvocationList();
+
+            if (AllowDuplicates)
+            {
+                return storedInvocations.Concat(newInvocations).ToArray();
+            }
+            return storedInvocations.Union(newInvocations).ToArray();
         }
     }
 }

@@ -69,9 +69,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Container\DuplicateCustomizationsFixtureBase.cs" />
+    <Compile Include="Container\ScopedApplicableCustomizationsFixtureBase.cs" />
     <Compile Include="Container\StandardCustomizationsContainerFixtureBase.cs" />
     <Compile Include="Container\WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly.cs" />
     <Compile Include="Container\WhenApplicableCustomizationsAreScopedToRequestedTypeOnly.cs" />
+    <Compile Include="Container\WhenDuplicateCustomizationsAreAllowed.cs" />
+    <Compile Include="Container\WhenDuplicateCustomizationsAreNotAllowed.cs" />
     <Compile Include="Session\TestDataSessionFixtureBase.cs" />
     <Compile Include="Session\WhenCreatesObject.cs" />
     <Compile Include="Session\WhenInitialized.cs" />

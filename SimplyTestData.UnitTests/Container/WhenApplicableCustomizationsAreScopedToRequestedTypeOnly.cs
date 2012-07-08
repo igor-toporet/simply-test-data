@@ -1,11 +1,10 @@
-using System;
 using System.Linq;
 using FluentAssertions;
 using Xunit;
 
 namespace SimplyTestData.UnitTests.Container
 {
-    public class WhenApplicableCustomizationsAreScopedToRequestedTypeOnly : StandardCustomizationsContainerFixtureBase
+    public class WhenApplicableCustomizationsAreScopedToRequestedTypeOnly : ScopedApplicableCustomizationsFixtureBase
     {
         public WhenApplicableCustomizationsAreScopedToRequestedTypeOnly()
         {

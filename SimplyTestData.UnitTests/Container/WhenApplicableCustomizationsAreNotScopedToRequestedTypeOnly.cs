@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SimplyTestData.UnitTests.Container
 {
-    public class WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly : StandardCustomizationsContainerFixtureBase
+    public class WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly : ScopedApplicableCustomizationsFixtureBase
     {
         public WhenApplicableCustomizationsAreNotScopedToRequestedTypeOnly()
         {
