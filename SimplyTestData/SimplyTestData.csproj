@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StandardCustomizationsContainer.cs" />
     <Compile Include="CustomizationExtensions.cs" />
     <Compile Include="ICustomizationsContainer.cs" />
